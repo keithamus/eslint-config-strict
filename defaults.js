@@ -55,7 +55,6 @@ module.exports = {
     plugins: [
         'filenames',
         'one-variable-per-var',
-        'require-trailing-comma',
     ],
 
     rules: {
@@ -588,8 +587,5 @@ module.exports = {
 
         // enforce declaring only one variable per var statement
         'one-variable-per-var/one-variable-per-var': 2,
-
-        // enforce a trailing comma at the end of multiline array & object literals
-        'require-trailing-comma/require-trailing-comma': 2,
     },
 };
