@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-strict",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ESLint sharable config for strict linting",
   "main": "index.js",
   "keywords": [
@@ -38,5 +38,6 @@
     "eslint-plugin-one-variable-per-var": "^0.0.3"
   },
   "author": "Keith Cirkel <npm@keithcirkel.co.uk> (http://keithcirkel.co.uk/)",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {}
 }
