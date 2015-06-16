@@ -521,12 +521,6 @@ module.exports = {
                 'named': 'never',
             },
         ],
-        // require or disallow spaces inside brackets
-        'space-in-brackets': [
-            2,
-            // enforce them to be "always" used when possible, or "never" used
-            'never',
-        ],
         // require or disallow spaces inside parentheses
         'space-in-parens': [
             2,
