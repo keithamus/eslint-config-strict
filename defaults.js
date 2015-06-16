@@ -86,13 +86,17 @@ module.exports = {
         // disallow empty statements
         'no-empty': 2,
         // disallow the use of empty character classes in regular expressions
-        'no-empty-class': 2,
+        'no-empty-character-class': 2,
         // disallow assigning to the exception in a catch block
         'no-ex-assign': 2,
         // disallow double-negation boolean casts in a boolean context
         'no-extra-boolean-cast': 2,
         // disallow unnecessary parentheses
-        'no-extra-parens': 0,
+        'no-extra-parens': [
+            2,
+            // only function expressions will be checked for unnecessary parentheses
+            "functions"
+        ],
         // disallow unnecessary semicolons
         'no-extra-semi': 2,
         // disallow overwriting functions written as function declarations
@@ -128,6 +132,8 @@ module.exports = {
         // These are rules designed to prevent you from making mistakes. They either
         // prescribe a better way of doing something or help you avoid footguns.
 
+        // Enforces getter/setter pairs in objects
+        'accessor-pairs': 2,
         // treat var statements as if they were block scoped
         'block-scoped-var': 0,
         // specify the maximum cyclomatic complexity allowed in a program
@@ -337,6 +343,12 @@ module.exports = {
             // enforce comma on the first line, or the last line
             'last',
         ],
+        // require or disallow padding inside computed properties
+        'computed-property-spacing': [
+            2,
+            // disallows spaces inside of computed properties
+            "never",
+        ],
         // enforces consistent naming when capturing the current execution context
         'consistent-this': [
             2,
@@ -372,6 +384,14 @@ module.exports = {
                 // enforce spaces after colon
                 'afterColon': true,
             },
+        ],
+        // enforces empty lines around comments
+        'lines-around-comment': [
+            2,
+            {
+                'beforeBlockComment': false,
+                'beforeLineComment': false,
+            }
         ],
         // disallow mixed 'LF' and 'CRLF' as linebreaks
         'linebreak-style': [
@@ -427,8 +447,12 @@ module.exports = {
         'no-underscore-dangle': 2,
         // disallow the use of Boolean literals in conditional expressions
         'no-unneeded-ternary': 2,
-        // disallow wrapping of non-IIFE statements in parens
-        'no-wrap-func': 2,
+        // require or disallow padding inside curly braces
+        'object-curly-spacing': [
+            2,
+            // enforces a space inside of curly braces
+            "always"
+        ],
         // allow just one var statement per function
         'one-var': 0,
         // require assignment operator shorthand where possible or prohibit it entirely
@@ -515,11 +539,13 @@ module.exports = {
         'space-return-throw-case': 2,
         // Require or disallow spaces before/after unary operators
         'space-unary-ops': 2,
-        // require or disallow a space immediately following the // in a line comment
-        'spaced-line-comment': [
+        // require or disallow a space immediately following the // or /* in a comment
+        'spaced-comment': [
             2,
-            // enforce them to be "always" used when possible, or "never" used
             'always',
+            {
+                'exceptions': ['*'],
+            },
         ],
         // require regex literals to be wrapped in parentheses
         'wrap-regex': 0,
@@ -540,7 +566,8 @@ module.exports = {
             // Enforce shorthand "always", only for "properties", only for "methods", or "never"
             'always',
         ],
-
+        // suggest using of const declaration for variables that are never modified after declared
+        'prefer-const': 2,
         // # Legacy
         // The following rules are included for compatibility with JSHint and JSLint.
         // While the names of the rules may not match up with the JSHint/JSLint
