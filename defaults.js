@@ -562,6 +562,7 @@ module.exports = {
         ],
         // suggest using of const declaration for variables that are never modified after declared
         'prefer-const': 2,
+
         // # Legacy
         // The following rules are included for compatibility with JSHint and JSLint.
         // While the names of the rules may not match up with the JSHint/JSLint
