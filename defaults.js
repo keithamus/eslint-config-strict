@@ -49,13 +49,19 @@ module.exports = {
     },
 
     env: {
-        node: true
+        builtin: true,
+        node: true,
+        es6: true,
     },
 
     plugins: [
         'filenames',
         'one-variable-per-var',
     ],
+
+    globals: {
+
+    },
 
     rules: {
 
@@ -95,7 +101,7 @@ module.exports = {
         'no-extra-parens': [
             2,
             // only function expressions will be checked for unnecessary parentheses
-            "functions"
+            'functions',
         ],
         // disallow unnecessary semicolons
         'no-extra-semi': 2,
@@ -127,6 +133,8 @@ module.exports = {
         'valid-jsdoc': 0,
         // Ensure that the results of typeof are compared against a valid string
         'valid-typeof': 2,
+        // Avoid code that looks like two expressions but is actually one (off by default)
+        'no-unexpected-multiline': 2,
 
         // # Best Practices
         // These are rules designed to prevent you from making mistakes. They either
@@ -315,6 +323,11 @@ module.exports = {
         // # Stylistic Issues
         // These rules are purely matters of style and are quite subjective.
 
+        // enforce spacing inside array brackets
+        'array-bracket-spacing': [
+            2,
+            'always',
+        ],
         // enforce one true brace style
         'brace-style': [
             2,
@@ -347,7 +360,7 @@ module.exports = {
         'computed-property-spacing': [
             2,
             // disallows spaces inside of computed properties
-            "never",
+            'never',
         ],
         // enforces consistent naming when capturing the current execution context
         'consistent-this': [
@@ -391,7 +404,7 @@ module.exports = {
             {
                 'beforeBlockComment': false,
                 'beforeLineComment': false,
-            }
+            },
         ],
         // disallow mixed 'LF' and 'CRLF' as linebreaks
         'linebreak-style': [
@@ -451,7 +464,7 @@ module.exports = {
         'object-curly-spacing': [
             2,
             // enforces a space inside of curly braces
-            "always"
+            'always',
         ],
         // allow just one var statement per function
         'one-var': 0,
@@ -495,7 +508,7 @@ module.exports = {
                 'before': false,
                 // enforce spacing after semicolon
                 'after': true,
-            }
+            },
         ],
         // sort variables within the same declaration block
         'sort-vars': 0,
@@ -547,11 +560,15 @@ module.exports = {
         // # ECMAScript 6
         // These rules are only relevant to ES6 environments and are off by default.
 
+        // verify super() callings in constructors
+        'constructor-super': 2,
         // enforce the spacing around the * in generator functions
         'generator-star-spacing': [
             2,
             'both',
         ],
+        // disallow to use this/super before super() calling in constructors.
+        'no-this-before-super': 2,
         // require let or const instead of var
         'no-var': 2,
         // require method and property shorthand syntax for object literals
