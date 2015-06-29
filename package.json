@@ -3,6 +3,15 @@
   "version": "2.2.2",
   "description": "ESLint sharable config for strict linting",
   "main": "index.js",
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "quotes": [2, "single"],
+      "comma-dangle": [2, "always-multiline"]
+    }
+  },
   "keywords": [
     "strict",
     "style checker",
