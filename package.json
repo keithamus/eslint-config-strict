@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-strict",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "ESLint sharable config for strict linting",
   "main": "index.js",
   "eslintConfig": {
@@ -8,8 +8,14 @@
       "node": true
     },
     "rules": {
-      "quotes": [2, "single"],
-      "comma-dangle": [2, "always-multiline"]
+      "quotes": [
+        2,
+        "single"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ]
     }
   },
   "keywords": [
