@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-strict",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "ESLint sharable config for strict linting",
   "main": "index.js",
   "eslintConfig": {
