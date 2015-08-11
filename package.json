@@ -1,8 +1,8 @@
 {
   "name": "eslint-config-strict",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "description": "ESLint sharable config for strict linting",
-  "main": "index.js",
+  "main": "es6.js",
   "eslintConfig": {
     "env": {
       "node": true
@@ -49,8 +49,7 @@
   },
   "dependencies": {
     "eslint": "^0.24.0",
-    "eslint-plugin-filenames": "^0.1.1",
-    "eslint-plugin-one-variable-per-var": "^0.0.3"
+    "eslint-plugin-filenames": "^0.1.1"
   },
   "author": "Keith Cirkel <npm@keithcirkel.co.uk> (http://keithcirkel.co.uk/)",
   "license": "MIT",

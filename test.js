@@ -1,1 +1,1 @@
-module.exports = require('./es6/mocha');
+module.exports = require('./mocha');

@@ -2,6 +2,11 @@
 
 ESLint sharable config for strict linting.
 
+## BREAKING CHANGES:
+
+v3.0.0 changes the way configs are required in, as they are now stackable as per
+[eslint's extend directive][extend].
+
 ## Installation
 
 Install this config package and ESLint:
@@ -15,7 +20,8 @@ If you're using npm < v3 you'll also need to install all of the dependencies of 
 ```bash
 $ npm install --save-dev eslint eslint-plugin-filenames eslint-plugin-one-variable-per-var
 ```
-If you're planning on using the React configs, you'll also need the React plugin:
+
+If you're planning on using the React config, you'll also need the React plugin:
 
 ```bash
 $ npm install --save-dev eslint-plugin-react
@@ -26,52 +32,52 @@ $ npm install --save-dev eslint-plugin-react
 This set of configs is meant to be extended on a per-project basis as necessary
 using ESLint's [shareable configs][] feature.
 
-Configs are essentially divided up into two camps; `strict/es6/*` and `strict/es5/*`.
-All variations exist in both ES6 and ES5 styles.
+To start, you probably want to use pick either `strict/es6` or `strict/es5` (note:
+ `strict` can be used as an alias for `strict/es6`). You can then layer additional
+ rulesets on top using eslint, the additive rules are:
 
 This package includes the following configurations:
 
-- `strict/es5` (default configuration with ES6 rules disabled)
-- `strict/es6` (default configuration including all ES6 rules)
-- `strict/es6/react` (default rules with React rules added, requires `eslint-plugin-react`)
-- `strict/es5/react` (like `strict/es6/mocha`, but with ES6 rules disabled)
-- `strict/es6/mocha` (default rules with `env.mocha` true, `assert`, `expect`, `must` and `should` are globals, and `func-names` and `max-nested-callbacks` rules are disabled)
-- `strict/es5/mocha` (like `strict/es6/mocha`, but with ES6 rules disabled)
-- `strict/es6/browser` (default rules, but `env.node` is false and `env.browser` true)
-- `strict/es5/browser` (like `strict/es6/browser`, but with ES6 rules disabled)
-
-There are also some convenient aliases:
-
-- `strict` (alias for `strict/es6`)
-- `strict/browser` (alias for `strict/es5/browser`)
-- `strict/test` (alias for `strict/es6/mocha`)
-- `strict/mocha` (alias for `strict/es6/mocha`)
-- `strict/react` (alias for `strict/es6/react`)
+- `strict/react` (adds rules for React, requires `eslint-plugin-react`)
+- `strict/mocha` (adds `env.mocha` true, `assert`, `expect`, `must` and `should` are
+   added as globals, and `func-names`, `padded-blocks` and `max-nested-callbacks` rules
+   are explicitly turned off)
+- `strict/browser` (simply sets `env.browser` to true)
 
 ### How to use
 
-Simply define your `.eslintrc` like so:
+Simply define your `.eslintrc` (or add a `eslintConfig` object to `package.json`)
+like so:
 
 ```json
 {
-  "extends": "strict"
+  "extends": ["strict"]
 }
 ```
 
-Also, you can define a `test/.eslintrc` and use the following:
+Add any additional plugins you want, for example:
 
 ```json
 {
-  "extends": "strict/es6/test"
+  "extends": ["strict", "strict/react"]
 }
 ```
 
-If your project is a front-end project, you will need an `.eslintrc` that looks
-like this:
+
+Also, you can define a `test/.eslintrc` to override the projects main one:
 
 ```json
 {
-  "extends": "strict/es5/browser"
+  "extends": ["strict", "strict/react", "strict/mocha"]
+}
+```
+
+If your project is a front-end project and you're not transpiling ES6 code, you
+might have an `.eslintrc` that looks like this:
+
+```json
+{
+  "extends": ["strict/es5", "strict/browser"]
 }
 ```
 
@@ -79,7 +85,7 @@ Feel free to define additional globals or rules, or override them as you see fit
 
 ```json
 {
-  "extends": "strict/es6/browser",
+  "extends": ["strict"],
 
   "globals": {
     "blarg": true
@@ -91,6 +97,8 @@ Feel free to define additional globals or rules, or override them as you see fit
 }
 ```
 
-For more details about how shareable configs work, see the [ESLint documentation][shareable configs].
+For more details about how shareable configs work, see the
+[ESLint documentation][extend].
 
 [shareable configs]: http://eslint.org/docs/developer-guide/shareable-configs
+[extend]: http://eslint.org/docs/user-guide/configuring#extending-configuration-files

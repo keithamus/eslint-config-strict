@@ -1,1 +1,7 @@
-module.exports = require('./es5/browser');
+module.exports = {
+
+    env: {
+        browser: true,
+    },
+
+};
