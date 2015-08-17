@@ -7,6 +7,8 @@ ESLint sharable config for strict linting.
 v3.0.0 changes the way configs are required in, as they are now stackable as per
 [eslint's extend directive][extend].
 
+v4.0.0 drops React support, it is now in its own plugin: [`eslint-config-strict-react`](https://github.com/keithamus/eslint-config-strict-react).
+
 ## Installation
 
 Install this config package and ESLint:
@@ -18,14 +20,10 @@ $ npm install --save-dev eslint-config-strict
 If you're using npm < v3 you'll also need to install all of the dependencies of this project:
 
 ```bash
-$ npm install --save-dev eslint eslint-plugin-filenames eslint-plugin-one-variable-per-var
+$ npm install --save-dev eslint eslint-plugin-filenames
 ```
 
-If you're planning on using the React config, you'll also need the React plugin:
-
-```bash
-$ npm install --save-dev eslint-plugin-react
-```
+If you use React, also have a look at the [`eslint-config-strict-react`](https://github.com/keithamus/eslint-config-strict-react) plugin.
 
 ## Usage
 
@@ -59,7 +57,7 @@ Add any additional plugins you want, for example:
 
 ```json
 {
-  "extends": ["strict", "strict/react"]
+  "extends": ["strict", "strict/browser"]
 }
 ```
 
@@ -68,7 +66,7 @@ Also, you can define a `test/.eslintrc` to override the projects main one:
 
 ```json
 {
-  "extends": ["strict", "strict/react", "strict/mocha"]
+  "extends": ["strict", "strict/browser", "strict/mocha"]
 }
 ```
 
