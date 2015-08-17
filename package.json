@@ -48,7 +48,7 @@
     "url": "https://github.com/keithamus/eslint-config-strict.git"
   },
   "dependencies": {
-    "eslint": "^0.24.0",
+    "eslint": "^1.1.0",
     "eslint-plugin-filenames": "^0.1.1"
   },
   "author": "Keith Cirkel <npm@keithcirkel.co.uk> (http://keithcirkel.co.uk/)",
