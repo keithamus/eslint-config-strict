@@ -200,6 +200,8 @@ module.exports = {
         'no-unused-expressions': 2,
         // disallow unnecessary .call() and .apply()
         'no-useless-call': 2,
+        // disallow unnecessary concatenation of literals or template literals
+        'no-useless-concat': 2,
         // disallow use of void operator
         'no-void': 2,
         // disallow usage of configurable warning terms in comments: e.g. todo
@@ -303,6 +305,12 @@ module.exports = {
             2,
             'always',
         ],
+        // disallow or enforce spaces inside of single line blocks
+        'block-spacing': [
+            2,
+            // always enforce spacing in blocks
+            'always',
+        ],
         // enforce one true brace style
         'brace-style': [
             2,
@@ -360,8 +368,8 @@ module.exports = {
             {
                 // identifiers must be a minimum of 3 characters
                 min: 3,
-                // ... and a max of 20
-                max: 20,
+                // ... and a max of 50
+                max: 50,
                 // ... but `i`, `x`, and `y` are allowed
                 exceptions: [ 'i', 'x', 'y' ],
             },
