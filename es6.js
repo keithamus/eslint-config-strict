@@ -78,10 +78,10 @@ module.exports.rules['object-shorthand'] = [2, 'always'];
 module.exports.rules['prefer-arrow-callback'] = 2;
 // suggest using of const declaration for variables that are never modified after declared
 module.exports.rules['prefer-const'] = 2;
-// suggest using the spread operator instead of .apply()
-module.exports.rules['prefer-spread'] = 2;
 // suggest using Reflect methods where applicable
 module.exports.rules['prefer-reflect'] = 2;
+// suggest using the spread operator instead of .apply()
+module.exports.rules['prefer-spread'] = 2;
 // suggest using template literals instead of strings concatenation
 module.exports.rules['prefer-template'] = 2;
 // disallow generator functions that do not have yield

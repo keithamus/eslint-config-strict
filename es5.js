@@ -72,6 +72,8 @@ module.exports = {
         'no-regex-spaces': 2,
         // disallow sparse arrays
         'no-sparse-arrays': 2,
+        // Avoid code that looks like two expressions but is actually one (off by default)
+        'no-unexpected-multiline': 2,
         // disallow unreachable statements after a return, throw, continue, or break
         // statement
         'no-unreachable': 2,
@@ -81,8 +83,6 @@ module.exports = {
         'valid-jsdoc': 0,
         // Ensure that the results of typeof are compared against a valid string
         'valid-typeof': 2,
-        // Avoid code that looks like two expressions but is actually one (off by default)
-        'no-unexpected-multiline': 2,
 
         // # Best Practices
         // These are rules designed to prevent you from making mistakes. They either
@@ -98,20 +98,20 @@ module.exports = {
         // Maximum cycolmatic complexity
             10,
         ],
-      // require return statements to either always or never specify values
+        // require return statements to either always or never specify values
         'consistent-return': 2,
         // specify curly brace conventions for all control statements
         'curly': 2,
         // require default case in switch statements
         'default-case': 2,
-        // encourages use of dot notation whenever possible
-        'dot-notation': 2,
         // enforces consistent newlines before or after dots
         'dot-location': [
             2,
             // require the dot to be on the same line as the property
             'property',
         ],
+        // encourages use of dot notation whenever possible
+        'dot-notation': 2,
         // require the use of === and !==
         'eqeqeq': 2,
         // make sure for-in loops have an if statement
@@ -122,10 +122,12 @@ module.exports = {
         'no-caller': 2,
         // disallow division operators explicitly at beginning of regular expression
         'no-div-regex': 2,
-        // disallow else after a return in an if
-        'no-else-return': 2,
         // disallow use of labels for anything other then loops and switches
         'no-empty-label': 2,
+        // disallow use of empty destructuring patterns
+        'no-empty-pattern': 2,
+        // disallow else after a return in an if
+        'no-else-return': 2,
         // disallow comparisons to null without a type-checking operator
         'no-eq-null': 2,
         // disallow use of eval()
@@ -162,6 +164,8 @@ module.exports = {
         'no-lone-blocks': 2,
         // disallow creation of functions within loops
         'no-loop-func': 2,
+        // disallow the use of magic numbers
+        'no-magic-numbers': 2,
         // disallow use of multiple spaces
         'no-multi-spaces': 2,
         // disallow use of multiline strings
@@ -279,6 +283,8 @@ module.exports = {
             // name of callback argument
             ['callback', 'cb', 'next', 'done'],
         ],
+        // enforce `require()` on top-level module scope
+        'global-require': 2,
         // enforces error handling in callbacks
         'handle-callback-err': [
             2,
@@ -295,7 +301,8 @@ module.exports = {
         'no-process-exit': 2,
         // restrict usage of specified node modules
         'no-restricted-modules': 0,
-
+        // disallow use of synchronous methods
+        'no-sync': 2,
 
         // # Stylistic Issues
         // These rules are purely matters of style and are quite subjective.
@@ -367,11 +374,11 @@ module.exports = {
             2,
             {
                 // identifiers must be a minimum of 3 characters
-                min: 3,
+                'min': 3,
                 // ... and a max of 50
-                max: 50,
+                'max': 50,
                 // ... but `i`, `x`, and `y` are allowed
-                exceptions: [ 'i', 'x', 'y' ],
+                'exceptions': [ 'i', 'x', 'y' ],
             },
         ],
         // require identifiers to match the provided regular expression
@@ -382,7 +389,7 @@ module.exports = {
             '^[A-Z]?[a-z]+([A-Z][a-z]+)*$',
             {
                 // identifiers in properties are also checked
-                properties: true,
+                'properties': true,
             },
         ],
         // this option sets a specific tab width for your code
@@ -392,8 +399,14 @@ module.exports = {
             2,
             {
                 // indent switch cases
-                SwitchCase: 1,
+                'SwitchCase': 1,
             },
+        ],
+        // specify whether double or single quotes should be used in JSX attributes
+        'jsx-quotes': [
+            2,
+            // Always prefer double quotes
+            'prefer-double',
         ],
         // enforces spacing between keys and values in object literal properties
         'key-spacing': [
@@ -453,10 +466,18 @@ module.exports = {
         'no-mixed-spaces-and-tabs': 2,
         // disallow multiple empty lines
         'no-multiple-empty-lines': 2,
+        // disallow negated conditions
+        'no-negated-condition': 2,
         // disallow nested ternary expressions
         'no-nested-ternary': 2,
         // disallow use of the Object constructor
         'no-new-object': 2,
+        // disallow use of certain syntax in code
+        'no-restricted-syntax': [
+            2,
+            // Disallow `with` statements.
+            'WithStatement',
+        ],
         // disallow space between function identifier and application
         'no-spaced-func': 2,
         // disallow the use of ternary operators
@@ -505,6 +526,8 @@ module.exports = {
             // "double" or 'single' quotes should always be enforced
             'single',
         ],
+        // Require JSDoc comment
+        'require-jsdoc': 0,
         // require or disallow use of semicolons instead of ASI
         'semi': [
             2,
@@ -544,6 +567,12 @@ module.exports = {
                 // dissallow a space before named function parens
                 'named': 'never',
             },
+        ],
+        // require a space before certain keywords
+        'space-before-keywords': [
+            2,
+            // always require a space before keywords
+            'always',
         ],
         // require or disallow spaces inside parentheses
         'space-in-parens': [
