@@ -386,7 +386,7 @@ module.exports = {
             2,
             // identifiers must always be camel cased, and never have two
             // or more contiguous upper case characters.
-            '^[A-Z]?[a-z]+([A-Z][a-z]+)*$',
+            '^([A-Z]?[a-z]+([A-Z]{1,2}[a-z]+)*[A-Z]?|id|JSON|.*[Ii]ndexedDB|getMatchedCSSRules)$',
             {
                 // identifiers in properties are also checked
                 'properties': true,
