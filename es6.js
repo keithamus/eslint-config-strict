@@ -53,7 +53,8 @@ module.exports.ecmaFeatures = {
     // enable React JSX parsing
     jsx: false,
 };
-
+// require braces in arrow function body
+module.exports.rules['arrow-body-style'] = [2, 'always'];
 // require parens in arrow function arguments
 module.exports.rules['arrow-parens'] = [2, 'always'];
 // require space before/after arrow function's arrow
@@ -62,6 +63,8 @@ module.exports.rules['arrow-spacing'] = [2, { before: true, after: true }];
 module.exports.rules['constructor-super'] = 2;
 // enforce the spacing around the * in generator functions
 module.exports.rules['generator-star-spacing'] = [2, 'both'];
+// disallow arrow functions where a condition is expected
+module.exports.rules['no-arrow-condition'] = 2;
 // disallow modifying variables of class declarations
 module.exports.rules['no-class-assign'] = 2;
 // disallow modifying variables that are declared using const
