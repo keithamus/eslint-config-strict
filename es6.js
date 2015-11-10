@@ -54,7 +54,7 @@ module.exports.ecmaFeatures = {
     jsx: false,
 };
 // require braces in arrow function body
-module.exports.rules['arrow-body-style'] = [2, 'always'];
+module.exports.rules['arrow-body-style'] = [2, 'as-needed'];
 // require parens in arrow function arguments
 module.exports.rules['arrow-parens'] = [2, 'always'];
 // require space before/after arrow function's arrow
