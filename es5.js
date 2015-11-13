@@ -380,7 +380,7 @@ module.exports = {
                 // ... and a max of 50
                 'max': 50,
                 // ... but `i`, `x`, and `y` are allowed
-                'exceptions': [ 'i', 'x', 'y' ],
+                'exceptions': [ 'i', 'x', 'y', 'id' ],
             },
         ],
         // require identifiers to match the provided regular expression
