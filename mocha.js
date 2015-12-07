@@ -15,6 +15,8 @@ module.exports = {
 
     // Rules that are a hassle to have enforced for Mocha & co
     rules: {
+        // disallow the use of magic numbers
+        'no-magic-numbers': 0,
         // require function expressions to have a name
         'func-names': 0,
         // specify the maximum depth callbacks can be nested

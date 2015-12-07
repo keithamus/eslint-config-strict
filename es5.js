@@ -379,7 +379,7 @@ module.exports = {
                 'min': 3,
                 // ... and a max of 50
                 'max': 50,
-                // ... but `i`, `x`, and `y` are allowed
+                // ... but `i`, `x`, and `y`, and 'id' are allowed
                 'exceptions': [ 'i', 'x', 'y', 'id' ],
             },
         ],
