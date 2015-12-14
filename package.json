@@ -29,6 +29,9 @@
   ],
   "license": "MIT",
   "author": "Keith Cirkel <npm@keithcirkel.co.uk> (http://keithcirkel.co.uk/)",
+  "files": [
+    "*.js"
+  ],
   "main": "es6.js",
   "repository": {
     "type": "git",
