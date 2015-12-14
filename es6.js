@@ -6,52 +6,52 @@ module.exports.rules = module.exports.rules || {};
 module.exports.env.es6 = true;
 
 module.exports.ecmaFeatures = {
-    // enable parsing of arrow functions
-    arrowFunctions: true,
-    // enable parsing of binary literals
-    binaryLiterals: true,
-    // enable parsing of let/const
-    blockBindings: true,
-    // enable parsing classes
-    classes: true,
-    // enable parsing of default parameters
-    defaultParams: true,
-    // enable parsing of destructured arrays and objects
-    destructuring: true,
-    // enable parsing of for-of statement
-    forOf: true,
-    // enable parsing of generators/yield
-    generators: true,
-    // enable parsing of modules
-    modules: true,
-    // enable parsing computed object literal properties
-    objectLiteralComputedProperties: true,
-    // Allow duplicate object literal properties (except '__proto__')
-    objectLiteralDuplicateProperties: true,
-    // enable parsing of shorthand object literal methods
-    objectLiteralShorthandMethods: true,
-    // enable parsing of shorthand object literal properties
-    objectLiteralShorthandProperties: true,
-    // enable parsing of ES6 octal literals
-    octalLiterals: true,
-    // enable parsing of regular expression y flag
-    regexYFlag: true,
-    // enable parsing of regular expression u flag
-    regexUFlag: true,
-    // enable parsing of rest parameters
-    restParams: true,
-    // enable parsing spread operator
-    spread: true,
-    // enable super references inside of functions
-    superInFunctions: true,
-    // enable parsing of template strings
-    templateStrings: true,
-    // enable parsing unicode code point escape sequences
-    unicodeCodePointEscapes: true,
-    // enable return in global scope
-    globalReturn: true,
-    // enable React JSX parsing
-    jsx: false,
+  // enable parsing of arrow functions
+  arrowFunctions: true,
+  // enable parsing of binary literals
+  binaryLiterals: true,
+  // enable parsing of let/const
+  blockBindings: true,
+  // enable parsing classes
+  classes: true,
+  // enable parsing of default parameters
+  defaultParams: true,
+  // enable parsing of destructured arrays and objects
+  destructuring: true,
+  // enable parsing of for-of statement
+  forOf: true,
+  // enable parsing of generators/yield
+  generators: true,
+  // enable parsing of modules
+  modules: true,
+  // enable parsing computed object literal properties
+  objectLiteralComputedProperties: true,
+  // Allow duplicate object literal properties (except '__proto__')
+  objectLiteralDuplicateProperties: true,
+  // enable parsing of shorthand object literal methods
+  objectLiteralShorthandMethods: true,
+  // enable parsing of shorthand object literal properties
+  objectLiteralShorthandProperties: true,
+  // enable parsing of ES6 octal literals
+  octalLiterals: true,
+  // enable parsing of regular expression y flag
+  regexYFlag: true,
+  // enable parsing of regular expression u flag
+  regexUFlag: true,
+  // enable parsing of rest parameters
+  restParams: true,
+  // enable parsing spread operator
+  spread: true,
+  // enable super references inside of functions
+  superInFunctions: true,
+  // enable parsing of template strings
+  templateStrings: true,
+  // enable parsing unicode code point escape sequences
+  unicodeCodePointEscapes: true,
+  // enable return in global scope
+  globalReturn: true,
+  // enable React JSX parsing
+  jsx: false,
 };
 // require braces in arrow function body
 module.exports.rules['arrow-body-style'] = [2, 'as-needed'];
