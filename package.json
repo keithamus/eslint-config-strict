@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "eslint": "^1.9.0",
-    "eslint-plugin-filenames": "^0.1.2"
+    "eslint-plugin-filenames": "^0.2.0"
   },
   "author": "Keith Cirkel <npm@keithcirkel.co.uk> (http://keithcirkel.co.uk/)",
   "license": "MIT",
