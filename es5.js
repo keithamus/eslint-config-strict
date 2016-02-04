@@ -125,7 +125,7 @@ module.exports = {
     // disallow division operators explicitly at beginning of regular expression
     'no-div-regex': 2,
     // disallow use of labels for anything other then loops and switches
-    'no-empty-label': 2,
+    'no-labels': 2,
     // disallow use of empty destructuring patterns
     'no-empty-pattern': 2,
     // disallow else after a return in an if
@@ -549,7 +549,7 @@ module.exports = {
     // sort variables within the same declaration block
     'sort-vars': 0,
     // require a space after certain keywords
-    'space-after-keywords': [
+    'keyword-spacing': [
       2,
       // enforce them to be "always" used when possible, or "never" used
       'always',
@@ -571,7 +571,7 @@ module.exports = {
       },
     ],
     // require a space before certain keywords
-    'space-before-keywords': [
+    'keyword-spacing': [
       2,
       // always require a space before keywords
       'always',
@@ -585,7 +585,7 @@ module.exports = {
     // require spaces around operators
     'space-infix-ops': 2,
     // require a space after return, throw, and case
-    'space-return-throw-case': 2,
+    'keyword-spacing': 2,
     // Require or disallow spaces before/after unary operators
     'space-unary-ops': 2,
     // require or disallow a space immediately following the // or /* in a comment
