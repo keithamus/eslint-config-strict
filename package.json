@@ -67,8 +67,8 @@
     }
   },
   "dependencies": {
-    "eslint": "^1.9.0",
-    "eslint-plugin-filenames": "^0.2.0"
+    "eslint": "^2.0.0-rc.0",
+    "eslint-plugin-filenames": "https://github.com/fullcube/eslint-plugin-filenames/tarball/0123c4bb0034d71cc7a04c25fd63b3ac798052a1"
   },
   "devDependencies": {
     "ghooks": "^1.0.1",
