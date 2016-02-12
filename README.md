@@ -2,12 +2,9 @@
 
 ESLint sharable config for strict linting.
 
-## BREAKING CHANGES:
+## Rules
 
-v3.0.0 changes the way configs are required in, as they are now stackable as per
-[eslint's extend directive][extend].
-
-v4.0.0 drops React support, it is now in its own plugin: [`eslint-config-strict-react`](https://github.com/keithamus/eslint-config-strict-react).
+Every rule is documented, justified, and has examples within the [rules](./rules) folder. If you feel like a rule is wrong, take a read of this file, or refer others to it!
 
 ## Installation
 
