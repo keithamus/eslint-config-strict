@@ -90,6 +90,8 @@ module.exports = {
 
     // Enforces getter/setter pairs in objects
     'accessor-pairs': 2,
+    // Enforces return statements in callbacks of array's methods
+    'array-callback-return': 2,
     // treat var statements as if they were block scoped
     'block-scoped-var': 0,
     // specify the maximum cyclomatic complexity allowed in a program
@@ -124,12 +126,18 @@ module.exports = {
     'no-case-declarations': 2,
     // disallow division operators explicitly at beginning of regular expression
     'no-div-regex': 2,
-    // disallow use of labels for anything other then loops and switches
-    'no-empty-label': 2,
     // disallow use of empty destructuring patterns
     'no-empty-pattern': 2,
     // disallow else after a return in an if
     'no-else-return': 2,
+    // disallow use of empty functions
+    'no-empty-function': [
+      2,
+      {
+        // Do not allow any type of empty function
+        allow: [],
+      },
+    ],
     // disallow comparisons to null without a type-checking operator
     'no-eq-null': 2,
     // disallow use of eval()
@@ -138,6 +146,8 @@ module.exports = {
     'no-extend-native': 2,
     // disallow unnecessary function binding
     'no-extra-bind': 2,
+    // disallow unnecessary labels
+    'no-extra-label': 2,
     // disallow fallthrough of case statements
     'no-fallthrough': 2,
     // disallow the use of leading or trailing decimal points in numeric literals
@@ -154,6 +164,8 @@ module.exports = {
         string: true,
       },
     ],
+    // disallow var and named functions in global scope
+    'no-implicit-globals': 2,
     // disallow use of eval()-like methods
     'no-implied-eval': 2,
     // disallow this keywords outside of classes or class-like objects
@@ -196,14 +208,20 @@ module.exports = {
     'no-return-assign': 2,
     // disallow use of `javascript:` urls.
     'no-script-url': 2,
+    // disallow assignments where both sides are exactly the same
+    'no-self-assign': 2,
     // disallow comparisons where both sides are exactly the same
     'no-self-compare': 2,
     // disallow use of comma operator
     'no-sequences': 2,
     // restrict what can be thrown as an exception
     'no-throw-literal': 2,
+    // disallow unmodified conditions of loops
+    'no-unmodified-loop-condition': 2,
     // disallow usage of expressions in statement position
     'no-unused-expressions': 2,
+    // disallow unused labels
+    'no-unused-labels': 2,
     // disallow unnecessary .call() and .apply()
     'no-useless-call': 2,
     // disallow unnecessary concatenation of literals or template literals
@@ -386,13 +404,46 @@ module.exports = {
     // require identifiers to match the provided regular expression
     'id-match': [
       2,
-      // identifiers must always be camel cased, and never have two
-      // or more contiguous upper case characters.
-      '^([A-Z]?[a-z]+([A-Z]{1,2}[a-z]+)*[A-Z]?|id|JSON|.*[Ii]ndexedDB|getMatchedCSSRules)$',
+      // identifiers must always be camel cased.
+      '^([A-Z]?(?:[A-Z]+[a-z]+)*$',
       {
         // identifiers in properties are also checked
         'properties': true,
       },
+    ],
+    // Blacklist certain identifiers to prevent them being used
+    'id-blacklist': [
+      2,
+      [
+        // Generic, try instead naming with context, for example "userData", "fileError", "httpCallback"
+        'data',
+        'item',
+        'err',
+        'error',
+        'cb',
+        'callback',
+        // These name the type but have no other real context. Try naming with context
+        'array',
+        'func',
+        'object',
+        'string',
+        'num',
+        'number',
+        // Common placeholder variables, avoid these in real code
+        'foo',
+        'bar',
+        'baz',
+        'bang',
+        'biz',
+        'bong',
+        'tmp',
+        'temp',
+        'thing',
+        // These are common names for `this`. Instead use bind or arrow functions
+        'that',
+        'self',
+        'context',
+      ],
     ],
     // this option sets a specific tab width for your code
     'indent': [
@@ -418,6 +469,14 @@ module.exports = {
         'beforeColon': false,
         // enforce spaces after colon
         'afterColon': true,
+      },
+    ],
+    // enforce spacing before and after keywords
+    'keyword-spacing': [
+      2,
+      {
+        before: 'true',
+        after: 'true',
       },
     ],
     // enforces empty lines around comments
@@ -456,6 +515,13 @@ module.exports = {
       2,
       'never',
     ],
+    // enforce newline after each call when chaining the calls
+    'newline-per-chained-call': [
+      2,
+      {
+        ignoreChainWithDepth: 2,
+      },
+    ],
     // disallow use of the Array constructor
     'no-array-constructor': 2,
     // disallow use of the continue statement
@@ -480,6 +546,8 @@ module.exports = {
       // Disallow `with` statements.
       'WithStatement',
     ],
+    // disallow whitespace before properties
+    'no-whitespace-before-property': 2,
     // disallow space between function identifier and application
     'no-spaced-func': 2,
     // disallow the use of ternary operators
@@ -501,6 +569,12 @@ module.exports = {
       2,
       // only allow one variable per declaration
       'never',
+    ],
+    // require or disallow an newline around variable declarations
+    'one-var-declaration-per-line': [
+      2,
+      // Always enforce one variable declaration per line
+      'always',
     ],
     // require assignment operator shorthand where possible or prohibit it entirely
     'operator-assignment': [
@@ -548,12 +622,8 @@ module.exports = {
     ],
     // sort variables within the same declaration block
     'sort-vars': 0,
-    // require a space after certain keywords
-    'space-after-keywords': [
-      2,
-      // enforce them to be "always" used when possible, or "never" used
-      'always',
-    ],
+    // sort import declarations within module
+    'sort-imports': 2,
     // require or disallow space before blocks
     'space-before-blocks': [
       2,
@@ -570,12 +640,6 @@ module.exports = {
         'named': 'never',
       },
     ],
-    // require a space before certain keywords
-    'space-before-keywords': [
-      2,
-      // always require a space before keywords
-      'always',
-    ],
     // require or disallow spaces inside parentheses
     'space-in-parens': [
       2,
@@ -584,8 +648,6 @@ module.exports = {
     ],
     // require spaces around operators
     'space-infix-ops': 2,
-    // require a space after return, throw, and case
-    'space-return-throw-case': 2,
     // Require or disallow spaces before/after unary operators
     'space-unary-ops': 2,
     // require or disallow a space immediately following the // or /* in a comment
