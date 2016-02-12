@@ -695,14 +695,18 @@ module.exports = {
     // disallow use of unary operators, ++ and --
     'no-plusplus': 0,
 
-    // # Plugins
-    // The following rules are included based on the plugins available.
-
-    // specify a pattern file names must match
-    'filenames/filenames': [
-      2,
-      // the pattern a file name must match
-      '^[a-z\-\.]+$',
-    ],
   },
 };
+
+// # Plugins
+// The following rules are included based on the plugins available.
+try {
+  require('eslint-plugin-filenames');
+  // specify a pattern file names must match
+  module.exports.rules['filenames/filenames'] = [
+    2,
+    // the pattern a file name must match
+    '^[a-z\-\.]+$',
+  ];
+} catch (e) {
+}
