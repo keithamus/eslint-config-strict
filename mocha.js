@@ -21,6 +21,8 @@ module.exports = {
     'func-names': 0,
     // specify the maximum depth callbacks can be nested
     'max-nested-callbacks': 0,
+    // enforce newline after each call when chaining the calls
+    'newline-per-chained-call': 0,
     // enforce padding within blocks
     'padded-blocks': 0,
   },
