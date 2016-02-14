@@ -405,7 +405,7 @@ module.exports = {
     'id-match': [
       2,
       // identifiers must always be camel cased.
-      '^[A-Za-z][a-z]*(?:[A-Z]+[a-z]+)*$',
+      '^[A-Za-z]*$',
       {
         // identifiers in properties are also checked
         'properties': true,
