@@ -405,7 +405,7 @@ module.exports = {
     'id-match': [
       2,
       // identifiers must always be camel cased.
-      '^([A-Z]?(?:[A-Z]+[a-z]+)*$',
+      '^[A-Za-z][a-z]*(?:[A-Z]+[a-z]+)*$',
       {
         // identifiers in properties are also checked
         'properties': true,
@@ -414,36 +414,34 @@ module.exports = {
     // Blacklist certain identifiers to prevent them being used
     'id-blacklist': [
       2,
-      [
-        // Generic, try instead naming with context, for example "userData", "fileError", "httpCallback"
-        'data',
-        'item',
-        'err',
-        'error',
-        'cb',
-        'callback',
-        // These name the type but have no other real context. Try naming with context
-        'array',
-        'func',
-        'object',
-        'string',
-        'num',
-        'number',
-        // Common placeholder variables, avoid these in real code
-        'foo',
-        'bar',
-        'baz',
-        'bang',
-        'biz',
-        'bong',
-        'tmp',
-        'temp',
-        'thing',
-        // These are common names for `this`. Instead use bind or arrow functions
-        'that',
-        'self',
-        'context',
-      ],
+      // Generic, try instead naming with context, for example "userData", "fileError", "httpCallback"
+      'data',
+      'item',
+      'err',
+      'error',
+      'cb',
+      'callback',
+      // These name the type but have no other real context. Try naming with context
+      'array',
+      'func',
+      'object',
+      'string',
+      'num',
+      'number',
+      // Common placeholder variables, avoid these in real code
+      'foo',
+      'bar',
+      'baz',
+      'bang',
+      'biz',
+      'bong',
+      'tmp',
+      'temp',
+      'thing',
+      // These are common names for `this`. Instead use bind or arrow functions
+      'that',
+      'self',
+      'context',
     ],
     // this option sets a specific tab width for your code
     'indent': [
@@ -475,8 +473,8 @@ module.exports = {
     'keyword-spacing': [
       2,
       {
-        before: 'true',
-        after: 'true',
+        before: true,
+        after: true,
       },
     ],
     // enforces empty lines around comments
@@ -519,7 +517,7 @@ module.exports = {
     'newline-per-chained-call': [
       2,
       {
-        ignoreChainWithDepth: 2,
+        ignoreChainWithDepth: 5,
       },
     ],
     // disallow use of the Array constructor
