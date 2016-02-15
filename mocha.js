@@ -19,6 +19,8 @@ module.exports = {
     'no-magic-numbers': 0,
     // require function expressions to have a name
     'func-names': 0,
+    // Blacklist certain identifiers to prevent them being used
+    'id-blacklist': 0,
     // specify the maximum depth callbacks can be nested
     'max-nested-callbacks': 0,
     // enforce newline after each call when chaining the calls
