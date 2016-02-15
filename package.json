@@ -67,11 +67,11 @@
     }
   },
   "dependencies": {
-    "eslint": "^2.0.0",
+    "eslint": "^2.1.0",
     "eslint-plugin-filenames": "^0.2.0"
   },
   "devDependencies": {
-    "ghooks": "^1.0.1",
+    "ghooks": "^1.0.3",
     "semantic-release": "^4.3.5",
     "travis-after-all": "^1.4.4",
     "validate-commit-msg": "^2.0.0"
