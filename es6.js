@@ -2,56 +2,23 @@
 module.exports = require('./es5');
 module.exports.env = module.exports.env || {};
 module.exports.rules = module.exports.rules || {};
+module.exports.parserOptions = module.exports.parserOptions || {};
+module.exports.parserOptions.ecmaFeatures = module.exports.parserOptions.ecmaFeatures || {};
 
 module.exports.env.es6 = true;
 
-module.exports.ecmaFeatures = {
-  // enable parsing of arrow functions
-  arrowFunctions: true,
-  // enable parsing of binary literals
-  binaryLiterals: true,
-  // enable parsing of let/const
-  blockBindings: true,
-  // enable parsing classes
-  classes: true,
-  // enable parsing of default parameters
-  defaultParams: true,
-  // enable parsing of destructured arrays and objects
-  destructuring: true,
-  // enable parsing of for-of statement
-  forOf: true,
-  // enable parsing of generators/yield
-  generators: true,
-  // enable parsing of modules
-  modules: true,
-  // enable parsing computed object literal properties
-  objectLiteralComputedProperties: true,
-  // Allow duplicate object literal properties (except '__proto__')
-  objectLiteralDuplicateProperties: true,
-  // enable parsing of shorthand object literal methods
-  objectLiteralShorthandMethods: true,
-  // enable parsing of shorthand object literal properties
-  objectLiteralShorthandProperties: true,
-  // enable parsing of ES6 octal literals
-  octalLiterals: true,
-  // enable parsing of regular expression y flag
-  regexYFlag: true,
-  // enable parsing of regular expression u flag
-  regexUFlag: true,
-  // enable parsing of rest parameters
-  restParams: true,
-  // enable parsing spread operator
-  spread: true,
-  // enable super references inside of functions
-  superInFunctions: true,
-  // enable parsing of template strings
-  templateStrings: true,
-  // enable parsing unicode code point escape sequences
-  unicodeCodePointEscapes: true,
-  // enable return in global scope
+module.exports.parserOptions.ecmaVersion = 6;
+module.exports.parserOptions.sourceType = 'module';
+
+module.exports.parserOptions.ecmaFeatures = {
+  // allow return statements in the global scope
   globalReturn: true,
-  // enable React JSX parsing
+  // enable global strict mode (if ecmaVersion is 5 or greater)
+  impliedStrict: true,
+  // enable JSX
   jsx: false,
+  // enable support for the experimental object rest/spread properties
+  experimentalObjectRestSpread: false,
 };
 // require braces in arrow function body
 module.exports.rules['arrow-body-style'] = [2, 'as-needed'];
