@@ -184,6 +184,7 @@ module.exports = {
       {
         ignore: [
           1,
+          2,
         ],
       },
     ],
