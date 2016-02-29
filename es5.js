@@ -183,8 +183,9 @@ module.exports = {
       2,
       {
         ignore: [
-          1,
-          2,
+          0, // allowed for common operations such as guarding length (`.length === 0`)
+          1, // allowed for common operations such as inc/decrementing (`+=1`, `.length  - 1`)
+          2, // allowed for common operations such as dividing by two (`half = total / 2`)
         ],
       },
     ],
