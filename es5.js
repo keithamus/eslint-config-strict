@@ -628,7 +628,7 @@ module.exports = {
     // sort variables within the same declaration block
     'sort-vars': 0,
     // sort import declarations within module
-    'sort-imports': 2,
+    'sort-imports': 0,
     // require or disallow space before blocks
     'space-before-blocks': [
       2,
