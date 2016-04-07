@@ -5,9 +5,7 @@ module.exports = {
     node: true,
   },
 
-  plugins: [
-    'filenames',
-  ],
+  plugins: [],
 
   globals: {
 
@@ -709,6 +707,7 @@ module.exports = {
 // The following rules are included based on the plugins available.
 try {
   require('eslint-plugin-filenames');
+  module.exports.plugins.push('filenames');
   // specify a pattern file names must match
   module.exports.rules['filenames/filenames'] = [
     2,
