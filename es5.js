@@ -411,8 +411,8 @@ module.exports = {
     // require identifiers to match the provided regular expression
     'id-match': [
       2,
-      // identifiers must always be camel cased.
-      '^[A-Za-z]*$',
+      // identifiers must always be camelCased or CONSTANT_NAMED.
+      '^([A-Za-z]*|[A-Z][A-Z_]*[A-Z])$',
       {
         // identifiers in properties are also checked
         'properties': true,
