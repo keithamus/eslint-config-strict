@@ -15,7 +15,7 @@ module.exports = {
       2,
       // identifiers must always be camel cased, unless they are all caps
       // they may not include numbers, except as a part of the phrase "d3"
-      '^([A-Za-z]*([dD]3)?[A-Za-z]*|[A-Z][A-Z_]*((D3)?[A-Z_]*[A-Z]|D3))$',
+      '^([A-Za-z]*([dD]3)?[A-Za-z]*|([A-Z]|(D3))[A-Z_]*((D3)?[A-Z_]*[A-Z]|D3))$',
       {
         // identifiers in properties are also checked
         'properties': true,
