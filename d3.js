@@ -8,7 +8,7 @@ module.exports = {
       {
         'min': idLengthOptions.min,
         'max': idLengthOptions.max,
-        'exceptions': idLengthOptions.exceptions.concat([ 'd', 'dx', 'dy', 'r', 'cx', 'cy', 'd3' ]),
+        'exceptions': idLengthOptions.exceptions.concat([ 'd', 'dx', 'dy', 'd3' ]),
       },
     ],
     'id-match': [
