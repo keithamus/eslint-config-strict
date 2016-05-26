@@ -406,6 +406,8 @@ module.exports = {
         'max': 50,
         // ... but `i`, `x`, and `y`, and 'id' are allowed
         'exceptions': [ 'i', 'x', 'y', 'id' ],
+        // don't check identifiers that are object properties
+        'properties': 'never',
       },
     ],
     // require identifiers to match the provided regular expression
@@ -414,8 +416,8 @@ module.exports = {
       // identifiers must always be camelCased or CONSTANT_NAMED.
       '^([A-Za-z]*|[A-Z][A-Z_]*[A-Z])$',
       {
-        // identifiers in properties are also checked
-        'properties': true,
+        // don't check identifiers in properties are also checked
+        'properties': false,
       },
     ],
     // Blacklist certain identifiers to prevent them being used
