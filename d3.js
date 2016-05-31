@@ -1,6 +1,7 @@
 'use strict';
 var mainConfig = require('./es5');
 var idLengthOptions = mainConfig.rules['id-length'][1];
+var idMatchOptions = mainConfig.rules['id-match'][2];
 module.exports = {
   rules : {
     'id-length': [
@@ -17,8 +18,7 @@ module.exports = {
       // they may not include numbers, except as a part of the phrase "d3"
       '^([A-Za-z]*([dD]3)?[A-Za-z]*|([A-Z]|(D3))[A-Z_]*((D3)?[A-Z_]*[A-Z]|D3))$',
       {
-        // identifiers in properties are also checked
-        'properties': true,
+        'properties': idMatchOptions.properties,
       },
     ],
   },
