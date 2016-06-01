@@ -48,6 +48,8 @@ module.exports.rules['no-useless-computed-key'] = 2;
 module.exports.rules['no-var'] = 2;
 // disallow unnecessary constructor
 module.exports.rules['no-useless-constructor'] = 2;
+// disallow renaming import, export, and destructured assignments to the same name
+module.exports.rules['no-useless-rename'] = 2;
 // require method and property shorthand syntax for object literals
 module.exports.rules['object-shorthand'] = [2, 'always'];
 // suggest using arrow functions as callbacks
