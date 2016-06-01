@@ -42,6 +42,8 @@ module.exports.rules['no-dupe-class-members'] = 2;
 module.exports.rules['no-new-symbol'] = 2;
 // disallow to use this/super before super() calling in constructors.
 module.exports.rules['no-this-before-super'] = 2;
+// disallow unnecessary computed property keys in object literals
+module.exports.rules['no-useless-computed-key'] = 2;
 // require let or const instead of var
 module.exports.rules['no-var'] = 2;
 // disallow unnecessary constructor
