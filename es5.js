@@ -573,6 +573,8 @@ module.exports = {
       // enforces a space inside of curly braces
       'always',
     ],
+    // enforce placing object properties on separate lines
+    'object-property-newline': 0,
     // require or disallow one variable declaration per function
     'one-var': [
       2,
