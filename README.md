@@ -33,11 +33,11 @@ To start, you probably want to use pick either `strict/es6` or `strict/es5` (not
 
 This package includes the following configurations:
 
-- `strict/react` (adds rules for React, requires `eslint-plugin-react`)
 - `strict/mocha` (adds `env.mocha` true, `assert`, `expect`, `must` and `should` are
    added as globals, and `func-names`, `padded-blocks` and `max-nested-callbacks` rules
    are explicitly turned off)
 - `strict/browser` (simply sets `env.browser` to true)
+- `strict/d3` (relaxes strict identifier rules, allowing for identifiers like `d3`, `d`, `dx`, `dy`) 
 
 ### How to use
 
