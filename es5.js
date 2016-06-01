@@ -75,6 +75,8 @@ module.exports = {
     // disallow unreachable statements after a return, throw, continue, or break
     // statement
     'no-unreachable': 2,
+    // disallow control flow statements in finally blocks
+    'no-unsafe-finally': 2,
     // disallow comparisons with the value NaN
     'use-isnan': 2,
     // Ensure JSDoc comments are valid
