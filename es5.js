@@ -714,11 +714,15 @@ module.exports = {
 try {
   require('eslint-plugin-filenames');
   module.exports.plugins.push('filenames');
-  // specify a pattern file names must match
-  module.exports.rules['filenames/filenames'] = [
+  // consistent Filenames via regex
+  module.exports.rules['filenames/match-regex'] = [
     2,
     // the pattern a file name must match
     '^[a-z\-\.]+$',
   ];
+  // match exported values
+  module.exports.rules['filenames/match-exported'] = 0;
+  // don't allow index.js files
+  module.exports.rules['filenames/no-index'] = 0;
 } catch (e) {
 }
