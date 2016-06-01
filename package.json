@@ -71,9 +71,9 @@
     "eslint-plugin-filenames": "^1.0.0"
   },
   "devDependencies": {
-    "ghooks": "^1.0.3",
+    "ghooks": "^1.2.1",
     "semantic-release": "^4.3.5",
     "travis-after-all": "^1.4.4",
-    "validate-commit-msg": "^2.4.1"
+    "validate-commit-msg": "^2.6.1"
   }
 }
