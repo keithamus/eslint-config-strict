@@ -37,7 +37,8 @@ This package includes the following configurations:
    added as globals, and `func-names`, `padded-blocks` and `max-nested-callbacks` rules
    are explicitly turned off)
 - `strict/browser` (simply sets `env.browser` to true)
-- `strict/d3` (relaxes strict identifier rules, allowing for identifiers like `d3`, `d`, `dx`, `dy`) 
+- `strict/d3` (relaxes strict identifier rules, allowing for identifiers like `d3`, `d`, `dx`, `dy`)
+- `strict/babel` (for use with the [`eslint-plugin-babel`](https://github.com/babel/eslint-plugin-babel) plugin) 
 
 ### How to use
 
