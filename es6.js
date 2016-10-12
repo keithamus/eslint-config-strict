@@ -38,24 +38,30 @@ module.exports.rules['no-confusing-arrow'] = 2;
 module.exports.rules['no-const-assign'] = 2;
 // disallow duplicate name in class members
 module.exports.rules['no-dupe-class-members'] = 2;
+// disallow duplicate module imports
+module.exports.rules['no-duplicate-imports'] = 2;
 // disallow use of the new operator with the Symbol object
 module.exports.rules['no-new-symbol'] = 2;
+// disallow specified modules when loaded by import
+module.exports.rules['no-restricted-imports'] = 2;
 // disallow to use this/super before super() calling in constructors.
 module.exports.rules['no-this-before-super'] = 2;
 // disallow unnecessary computed property keys in object literals
 module.exports.rules['no-useless-computed-key'] = 2;
-// require let or const instead of var
-module.exports.rules['no-var'] = 2;
 // disallow unnecessary constructor
 module.exports.rules['no-useless-constructor'] = 2;
 // disallow renaming import, export, and destructured assignments to the same name
 module.exports.rules['no-useless-rename'] = 2;
+// require let or const instead of var
+module.exports.rules['no-var'] = 2;
 // require method and property shorthand syntax for object literals
 module.exports.rules['object-shorthand'] = [2, 'always'];
 // suggest using arrow functions as callbacks
 module.exports.rules['prefer-arrow-callback'] = 2;
 // suggest using of const declaration for variables that are never modified after declared
 module.exports.rules['prefer-const'] = 2;
+// disallow parseInt() in favor of binary, octal, and hexadecimal literals
+module.exports.rules['prefer-numeric-literals'] = 2;
 // suggest using Reflect methods where applicable
 module.exports.rules['prefer-reflect'] = 2;
 // suggest using the rest parameters instead of arguments
@@ -66,6 +72,12 @@ module.exports.rules['prefer-spread'] = 2;
 module.exports.rules['prefer-template'] = 2;
 // disallow generator functions that do not have yield
 module.exports.rules['require-yield'] = 2;
+// enforce spacing between rest and spread operators and their expressions
+module.exports.rules['rest-spread-spacing'] = [2, 'never'];
+// enforce sorted import declarations within modules
+module.exports.rules['sort-imports'] = 0;
+// require symbol descriptions
+module.exports.rules['symbol-description'] = 2;
 // enforce spacing around embedded expressions of template strings
 module.exports.rules['template-curly-spacing'] = [2, 'always'];
 // enforce spacing around the * in yield* expressions
