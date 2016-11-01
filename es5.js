@@ -622,15 +622,7 @@ module.exports = {
     // disallow whitespace before properties
     'no-whitespace-before-property': 2,
     // enforce consistent line breaks inside braces
-    'object-curly-newline': [
-      2,
-      {
-        // enforces newline separation if the object has multiline properties inside it
-        'multiline': true,
-        // enforces newline separation if the object spans over 3 or more propeties
-        'minProperties': 10,
-      },
-    ],
+    'object-curly-newline': 0,
     // require or disallow padding inside curly braces
     'object-curly-spacing': [
       2,
