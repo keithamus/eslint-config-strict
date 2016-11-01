@@ -628,7 +628,7 @@ module.exports = {
         // enforces newline separation if the object has multiline properties inside it
         'multiline': true,
         // enforces newline separation if the object spans over 3 or more propeties
-        'minProperties': 3,
+        'minProperties': 10,
       },
     ],
     // require or disallow padding inside curly braces
