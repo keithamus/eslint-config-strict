@@ -63,7 +63,7 @@ module.exports.rules['prefer-const'] = 2;
 // disallow parseInt() in favor of binary, octal, and hexadecimal literals
 module.exports.rules['prefer-numeric-literals'] = 2;
 // suggest using Reflect methods where applicable
-module.exports.rules['prefer-reflect'] = 2;
+module.exports.rules['prefer-reflect'] = 0;
 // suggest using the rest parameters instead of arguments
 module.exports.rules['prefer-rest-params'] = 2;
 // suggest using the spread operator instead of .apply()
