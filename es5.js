@@ -72,6 +72,8 @@ module.exports = {
     'no-unreachable': 2,
     // disallow control flow statements in finally blocks
     'no-unsafe-finally': 2,
+    // disallow negating the left operand of relational operators
+    'no-unsafe-negation': 2,
     // disallow comparisons with the value NaN
     'use-isnan': 2,
     // Ensure JSDoc comments are valid
