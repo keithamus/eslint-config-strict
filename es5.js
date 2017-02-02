@@ -725,6 +725,15 @@ module.exports = {
     // require regex literals to be wrapped in parentheses
     'wrap-regex': 0,
 
+    // # Deprecated
+    // These rules have been deprecated and replaced by newer rules.
+
+    // disallow Reassignment of Native Objects
+    'no-native-reassign': 0,
+    // disallow negating the left operand in in expressions
+    'no-negated-in-lhs': 0,
+    // disallow spacing between function identifiers and their applications
+    'no-spaced-func': 0,
   },
 };
 
