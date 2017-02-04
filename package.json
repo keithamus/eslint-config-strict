@@ -67,7 +67,7 @@
     }
   },
   "dependencies": {
-    "eslint": "^3.7.1",
+    "eslint": "^3.15.0",
     "eslint-plugin-filenames": "^1.1.0"
   },
   "devDependencies": {

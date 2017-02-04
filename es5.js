@@ -59,6 +59,8 @@ module.exports = {
     // disallow the use of object properties of the global object (Math and JSON)
     // as functions
     'no-obj-calls': 2,
+    // disallow use of Object.prototypes builtins directly
+    'no-prototype-builtins': 2,
     // disallow multiple spaces in a regular expression literal
     'no-regex-spaces': 2,
     // disallow sparse arrays
@@ -91,6 +93,8 @@ module.exports = {
     'array-callback-return': 2,
     // treat var statements as if they were block scoped
     'block-scoped-var': 0,
+    // enforce that class methods utilize `this`
+    'class-methods-use-this': 2,
     // specify the maximum cyclomatic complexity allowed in a program
     'complexity': [
       2,
@@ -208,8 +212,29 @@ module.exports = {
     'no-proto': 2,
     // disallow declaring the same variable more then once
     'no-redeclare': 2,
+    'no-restricted-properties': [
+      2,
+      {
+        'property': '__defineGetter__',
+        'message': 'Please use Object.defineProperty instead.',
+      },
+      {
+        'property': '__defineSetter__',
+        'message': 'Please use Object.defineProperty instead.',
+      },
+      {
+        'property': '__lookupGetter__',
+        'message': 'Please use Object.getOwnPropertyDescriptor instead.',
+      },
+      {
+        'property': '__lookupSetter__',
+        'message': 'Please use Object.getOwnPropertyDescriptor instead.',
+      },
+    ],
     // disallow use of assignment in return statement
     'no-return-assign': 2,
+    // disallows unnecessary `return await`
+    'no-return-await': 2,
     // disallow use of `javascript:` urls.
     'no-script-url': 2,
     // disallow assignments where both sides are exactly the same
@@ -230,6 +255,10 @@ module.exports = {
     'no-useless-call': 2,
     // disallow unnecessary concatenation of literals or template literals
     'no-useless-concat': 2,
+    // disallow unnecessary escape usage
+    'no-useless-escape': 2,
+    // disallow redundant return statements
+    'no-useless-return': 2,
     // disallow use of void operator
     'no-void': 2,
     // disallow usage of configurable warning terms in comments: e.g. todo
@@ -248,8 +277,12 @@ module.exports = {
     ],
     // disallow use of the with statement
     'no-with': 2,
+    // require using Error objects as Promise rejection reasons
+    'prefer-promise-reject-errors': 2,
     // require use of the second argument for parseInt()
     'radix': 2,
+    // disallow async functions which have no `await` expression
+    'require-await': 2,
     // requires to declare all vars on top of their containing scope
     'vars-on-top': 0,
     // require immediate function invocation to be wrapped in parentheses
@@ -358,6 +391,8 @@ module.exports = {
     ],
     // require camel case names
     'camelcase': 2,
+    // enforce or disallow capitalization of the first letter of a comment
+    'capitalized-comments': 0,
     // disallow or enforce trailing commas in object literals
     'comma-dangle': [
       2,
@@ -398,6 +433,8 @@ module.exports = {
       2,
       'never',
     ],
+    // require function names to match the name of the variable or property to which they are assigned
+    'func-name-matching': 2,
     // require function expressions to have a name
     'func-names': 2,
     // enforces use of function declarations or expressions
@@ -535,6 +572,8 @@ module.exports = {
       // line length
       120,
     ],
+    // enforce a maximum file length
+    'max-lines': 0,
     // specify the maximum depth callbacks can be nested
     'max-nested-callbacks': [
       2,
@@ -547,6 +586,8 @@ module.exports = {
       // max params
       5,
     ],
+    // enforce a maximum number of statements allowed per line
+    'max-statements-per-line': 2,
     // specify the maximum number of statement allowed in a function
     'max-statements': [
       2,
@@ -592,6 +633,8 @@ module.exports = {
     'no-mixed-operators': 2,
     // disallow mixed spaces and tabs for indentation
     'no-mixed-spaces-and-tabs': 2,
+    // disallow Use of Chained Assignment Expressions
+    'no-multi-assign': 2,
     // disallow multiple empty lines
     'no-multiple-empty-lines': 2,
     // disallow negated conditions
@@ -686,6 +729,8 @@ module.exports = {
       // enforce them to be "always" used when possible, or "never" used
       'always',
     ],
+    // require object keys to be sorted
+    'sort-keys': 0,
     // sort variables within the same declaration block
     'sort-vars': 0,
     // require or disallow space before blocks
@@ -722,9 +767,22 @@ module.exports = {
         'exceptions': ['*'],
       },
     ],
+    // require or disallow spacing between template tags and their literals
+    'template-tag-spacing': 2,
+    // require or disallow the Unicode Byte Order Mark (BOM)
+    'unicode-bom': 0,
     // require regex literals to be wrapped in parentheses
     'wrap-regex': 0,
 
+    // # Deprecated
+    // These rules have been deprecated and replaced by newer rules.
+
+    // disallow Reassignment of Native Objects
+    'no-native-reassign': 0,
+    // disallow negating the left operand in in expressions
+    'no-negated-in-lhs': 0,
+    // disallow spacing between function identifiers and their applications
+    'no-spaced-func': 0,
   },
 };
 

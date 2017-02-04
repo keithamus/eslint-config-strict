@@ -30,6 +30,8 @@ module.exports.rules['arrow-spacing'] = [2, { before: true, after: true }];
 module.exports.rules['constructor-super'] = 2;
 // enforce the spacing around the * in generator functions
 module.exports.rules['generator-star-spacing'] = [2, 'both'];
+// disallow `await` inside of loops
+module.exports.rules['no-await-in-loop'] = 0;
 // disallow modifying variables of class declarations
 module.exports.rules['no-class-assign'] = 2;
 // disallow arrow functions where a condition is expected
@@ -60,9 +62,11 @@ module.exports.rules['object-shorthand'] = [2, 'always'];
 module.exports.rules['prefer-arrow-callback'] = 2;
 // suggest using of const declaration for variables that are never modified after declared
 module.exports.rules['prefer-const'] = 2;
+// prefer destructuring from arrays and objects
+module.exports.rules['prefer-destructuring'] = 2;
 // disallow parseInt() in favor of binary, octal, and hexadecimal literals
 module.exports.rules['prefer-numeric-literals'] = 2;
-// suggest using Reflect methods where applicable
+// suggest using Reflect methods where applicable (deprecated)
 module.exports.rules['prefer-reflect'] = 0;
 // suggest using the rest parameters instead of arguments
 module.exports.rules['prefer-rest-params'] = 2;
