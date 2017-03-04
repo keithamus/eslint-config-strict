@@ -16,6 +16,8 @@ module.exports = {
     // # Possible Errors
     // The following rules point out areas where you might have made mistakes.
 
+    // disallow comparing against -0
+    'no-compare-neg-zero': 2,
     // disallow assignment in conditional expressions
     'no-cond-assign': 2,
     // disallow use of console
@@ -663,6 +665,8 @@ module.exports = {
     'no-unneeded-ternary': 2,
     // disallow whitespace before properties
     'no-whitespace-before-property': 2,
+    // enforce the location of single-line statements
+    'nonblock-statement-body-position': 0,
     // enforce consistent line breaks inside braces
     'object-curly-newline': 0,
     // require or disallow padding inside curly braces
