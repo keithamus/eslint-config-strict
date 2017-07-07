@@ -16,6 +16,8 @@ module.exports = {
     // # Possible Errors
     // The following rules point out areas where you might have made mistakes.
 
+    // enforce “for” loop update clause moving the counter in the right direction
+    'for-direction': 2,
     // disallow comparing against -0
     'no-compare-neg-zero': 2,
     // disallow assignment in conditional expressions
@@ -112,7 +114,7 @@ module.exports = {
     // enforces consistent newlines before or after dots
     'dot-location': [
       2,
-        // require the dot to be on the same line as the property
+      // require the dot to be on the same line as the property
       'property',
     ],
     // encourages use of dot notation whenever possible
@@ -308,7 +310,7 @@ module.exports = {
     // enforce or disallow variable initializations at definition
     'init-declarations': [
       2,
-        // always expect variables to be assigned upon initialisation
+      // always expect variables to be assigned upon initialisation
       'always',
     ],
     // disallow the catch clause parameter name being the same as a variable in the
@@ -349,9 +351,11 @@ module.exports = {
     // enforces error handling in callbacks
     'handle-callback-err': [
       2,
-        // name of error argument
+      // name of error argument
       '^.*(e|E)rr(or)?$',
     ],
+    // disallow use of the Buffer() constructor
+    'no-buffer-constructor': 2,
     // disallow mixing regular variable and require declarations
     'no-mixed-requires': 2,
     // disallow use of new operator with the require function
@@ -370,10 +374,26 @@ module.exports = {
     // # Stylistic Issues
     // These rules are purely matters of style and are quite subjective.
 
+    // enforce line breaks after opening and before closing array brackets
+    'array-bracket-newline': [
+      2,
+      {
+        // require line breaks if there are line breaks inside elements or between elements
+        'multiline': true,
+      },
+    ],
     // enforce spacing inside array brackets
     'array-bracket-spacing': [
       2,
       'always',
+    ],
+    // enforce line breaks between array elements
+    'array-element-newline': [
+      2,
+      {
+        // require line breaks if there are line breaks inside elements
+        'multiline': true,
+      },
     ],
     // disallow or enforce spaces inside of single line blocks
     'block-spacing': [
@@ -515,7 +535,7 @@ module.exports = {
     // specify whether double or single quotes should be used in JSX attributes
     'jsx-quotes': [
       2,
-        // Always prefer double quotes
+      // Always prefer double quotes
       'prefer-double',
     ],
     // enforces spacing between keys and values in object literal properties
@@ -556,11 +576,6 @@ module.exports = {
         'beforeBlockComment': false,
         'beforeLineComment': false,
       },
-    ],
-    // require or disallow newlines around directives
-    'lines-around-directive': [
-      2,
-      'always',
     ],
     // specify the maximum depth that blocks can be nested
     'max-depth': [
@@ -610,10 +625,6 @@ module.exports = {
     ],
     // disallow the omission of parentheses when invoking a constructor with no arguments
     'new-parens': 2,
-    // allow/disallow an empty newline after var statement
-    'newline-after-var': 0,
-    // require an empty line before return statements
-    'newline-before-return': 0,
     // enforce newline after each call when chaining the calls
     'newline-per-chained-call': [
       2,
@@ -707,6 +718,21 @@ module.exports = {
       // enforce them to be "always" used when possible, or "never" used
       'never',
     ],
+    // require or disallow padding lines between statements
+    'padding-line-between-statements': [
+      2,
+      // equire blank lines after all directive prologues, like the deprecated lines-around-directive rule
+      {
+        'blankLine': 'always',
+        'prev': 'directive',
+        'next': '*',
+      },
+      {
+        'blankLine': 'any',
+        'prev': 'directive',
+        'next': 'directive',
+      },
+    ],
     // require quotes around object literal property names
     'quote-props': 0,
     // specify whether double or single quotes should be used
@@ -726,6 +752,12 @@ module.exports = {
         // enforce spacing after semicolon
         'after': true,
       },
+    ],
+    // enforce location of semicolons
+    'semi-style': [
+      2,
+      // enforce that semicolons are at the end of statements
+      'last',
     ],
     // require or disallow use of semicolons instead of ASI
     'semi': [
@@ -769,6 +801,16 @@ module.exports = {
       'always',
       {
         'exceptions': ['*'],
+      },
+    ],
+    // enforce spacing around colons of switch statements
+    'switch-colon-spacing': [
+      2,
+      {
+        // require one or more spaces after colons
+        'after': true,
+        // disallow before colons
+        'before': false,
       },
     ],
     // require or disallow spacing between template tags and their literals
