@@ -518,6 +518,8 @@ module.exports = {
       // identifiers must always be camelCased or CONSTANT_NAMED.
       '^([A-Za-z]*|[A-Z][A-Z_]*[A-Z])$',
       {
+        // don't check existing identifiers, only new ones
+        "onlyDeclarations": true,
         // don't check identifiers in properties are also checked
         'properties': false,
       },
