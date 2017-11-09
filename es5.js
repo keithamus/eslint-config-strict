@@ -519,7 +519,7 @@ module.exports = {
       '^([A-Za-z]*|[A-Z][A-Z_]*[A-Z])$',
       {
         // don't check existing identifiers, only new ones
-        "onlyDeclarations": true,
+        'onlyDeclarations': true,
         // don't check identifiers in properties are also checked
         'properties': false,
       },
