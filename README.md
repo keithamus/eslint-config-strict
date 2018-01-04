@@ -1,6 +1,6 @@
 # eslint-config-strict
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/ygkcNhfZ9nTDeVM6P8LSGn1C/keithamus/eslint-config-strict'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/ygkcNhfZ9nTDeVM6P8LSGn1C/keithamus/eslint-config-strict.svg' /></a>
+
 
 ESLint sharable config for strict linting.
 
