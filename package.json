@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "eslint": "^4.1.1",
-    "eslint-plugin-filenames": "^1.1.0"
+    "eslint-plugin-filenames": "^1.3.2"
   },
   "devDependencies": {
     "ghooks": "^1.3.2",
